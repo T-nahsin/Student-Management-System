@@ -37,7 +37,7 @@
 <h3>Students List</h3>
 
 <img
-    src="./Screenshot%202026-08-24%20105735.png"
+    src="https://github.com/T-nahsin/Student-Management-System/blob/main/Screenshot%202026-08-24%20105550.png"
     alt="Student Management System Students List"
     width="850"
 >
