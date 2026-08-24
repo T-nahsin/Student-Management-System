@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management System</title>
 </head>
 
 <body>
@@ -25,7 +24,7 @@
 <h3>Dashboard</h3>
 
 <img
-    src="./Screenshot%202026-08-24%20105550.png"
+    src="./Screenshot 2026-08-24 105550.png"
     alt="Student Management System Dashboard"
     width="850"
 >
