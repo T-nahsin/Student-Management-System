@@ -7,6 +7,11 @@ use App\Models\StudentModel;
 class StudentController extends BaseController
 {
     protected StudentModel $studentModel;
+
+    public function __construct()
+    {
+        $this->studentModel = new StudentModel();
+    }
                                          
     public function createForm()
     {

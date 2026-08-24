@@ -8,6 +8,11 @@ class UserController extends BaseController
 {
     protected UserModel $userModel;
 
+    public function __construct()
+    {
+        $this->userModel = new UserModel();
+    }
+
     public function loginForm()
     {
         return view('/login');
