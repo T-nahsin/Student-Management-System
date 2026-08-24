@@ -1,69 +1,219 @@
-# CodeIgniter 4 Application Starter
+# Student Management System
 
-## What is CodeIgniter?
+A web-based **Student Management System** built using **PHP and CodeIgniter 4**. The application provides user authentication and allows authenticated users to manage and view student academic information through a simple and responsive interface.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 📸 Screenshots
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+### Dashboard
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+![Dashboard](Screenshot 2026-08-24 105550.png)
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+The dashboard provides access to the main student management functionalities and displays the currently logged-in user.
 
-## Installation & updates
+### Students List
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+![Students List](Screenshot 2026-08-24 105735.png)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+The students page displays registered student information including name, email, phone number, course, admission date, and fees.
 
-## Setup
+---
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## 🚀 Features
 
-## Important Change with index.php
+* User Registration
+* User Login and Logout
+* Password Hashing
+* Session-based Authentication
+* Dashboard
+* Add Student
+* View Students
+* Student Information Management
+* Form Validation
+* MySQL Database Integration
+* MVC architecture using CodeIgniter 4
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## 🛠️ Technologies Used
 
-**Please** read the user guide for a better explanation of how CI4 works!
+* **PHP**
+* **CodeIgniter 4**
+* **MySQL**
+* **HTML5**
+* **CSS3**
+* **Bootstrap**
+* **Git & GitHub**
 
-## Repository Management
+---
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## 🏗️ Project Architecture
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+The project follows the **MVC (Model-View-Controller)** architecture provided by CodeIgniter 4.
 
-## Server Requirements
+```text
+Student Management System
+│
+├── Controllers
+│   ├── UserController
+│   └── StudentController
+│
+├── Models
+│   ├── UserModel
+│   └── StudentModel
+│
+├── Views
+│   ├── login
+│   ├── signup
+│   ├── dashboard
+│   └── students
+│
+└── Database
+    ├── Users
+    └── Students
+```
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+---
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## ⚙️ Installation & Setup
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+### 1. Clone the repository
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+```bash
+git clone https://github.com/YOUR-USERNAME/Student-Management-System.git
+```
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+### 2. Navigate to the project
+
+```bash
+cd Student-Management-System
+```
+
+### 3. Install dependencies
+
+```bash
+composer install
+```
+
+### 4. Configure the environment
+
+Copy the environment file:
+
+```bash
+cp env .env
+```
+
+Then configure your database credentials in `.env`.
+
+Example:
+
+```env
+database.default.hostname = localhost
+database.default.database = student_management
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+```
+
+### 5. Create the database
+
+Create a MySQL database named:
+
+```text
+student_management
+```
+
+Then create the required tables according to the project's database structure.
+
+### 6. Start the application
+
+Run:
+
+```bash
+php spark serve
+```
+
+The application will be available at:
+
+```text
+http://localhost:8080
+```
+
+---
+
+## 🔐 Authentication
+
+The application includes:
+
+* User registration
+* Secure password hashing using PHP's `password_hash()`
+* Login authentication
+* Session management
+* Logout functionality
+* Protected application pages
+
+---
+
+## 📚 Student Management
+
+Authenticated users can access student-related functionality from the dashboard.
+
+Student records contain information such as:
+
+| Field          | Description               |
+| -------------- | ------------------------- |
+| ID             | Unique student identifier |
+| Name           | Student's full name       |
+| Email          | Student's email address   |
+| Phone          | Contact number            |
+| Course         | Academic course           |
+| Admission Date | Date of admission         |
+| Fees           | Course fees               |
+
+---
+
+## 📂 Project Structure
+
+```text
+app/
+├── Controllers/
+├── Models/
+├── Views/
+├── Config/
+└── Database/
+
+public/
+├── index.php
+└── assets/
+
+writable/
+system/
+composer.json
+composer.lock
+.env
+```
+
+> `.env` should not be committed to GitHub because it may contain database credentials or other sensitive configuration.
+
+---
+
+## 🎯 Purpose of the Project
+
+This project was developed to gain practical experience with:
+
+* PHP web development
+* CodeIgniter 4 framework
+* MVC architecture
+* Database integration
+* Authentication and sessions
+* CRUD-based application development
+* Git and GitHub
+
+---
+
+## 👨‍💻 Author
+
+**Nishant Singh**
+
+BCA Graduate | Software Developer
+
+GitHub: https://github.com/T-nahsin
